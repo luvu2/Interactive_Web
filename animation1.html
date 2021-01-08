@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web</title>
+    <style>
+        /* animation은 key frame을 추가할 수 있다 */
+        @keyframes sample-ani {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                background: red;
+                transform: translate(300px, 0);
+            }
+            100% {
+                transform: translate(400px, 500px);
+            }
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background: #fff000;
+
+            /* 크롬 개발자 도구에서 더 많은 속성 확인할 수 있음 */
+            animation: sample-ani 3s linear forwards;
+        }
+
+        /* 마우스 올리면 애니메이션 멈춤 */
+        .box:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <div class="box">BOX</div>
+</body>
+</html>
