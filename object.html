@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <h1>Object</h1>
+
+    <script>
+        // const person = {};
+        // // 속성, property
+        // person.name = '일분이';
+        // person.age = 10;
+        // // 메소드, method
+        // person.introduce = function() {
+        //     console.log('안녕하세요. 저는 일분이이고 나이는 10살이에요.')
+        // };
+
+        // person.introduce();
+
+        const person = {
+            nickname: '일분이',
+            age: 10,
+            introduce: function() {
+                console.log('안녕하세요. 저는 ' + this.nickname + '이고 나이는 ' + this.age + '살이에요.');
+            }
+        };
+
+        // // 아래 경우는 let foo;처럼 윈도우 전역 객체로 찍히는 this
+        // function foo() {
+        //     console.log(this);
+        // }
+        // foo();
+
+        const person2 = {
+            nickname: '이분이',
+            age: 8,
+            introduce: function() {
+                console.log('안녕하세요. 저는 ' + this.nickname + '이고 나이는 ' + this.age + '살이에요.');
+            }
+        };
+
+        person.introduce();
+        person2.introduce();
+    </script>
+</body>
+</html>
