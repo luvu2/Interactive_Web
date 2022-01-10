@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kor">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,20 @@
 
         // person.introduce();
 
+        // 생성자 (constructor)
+        function Person(nickname, age) {
+            this.nickname = nickname;
+            this.age = age;
+        }
+
+        Person.prototype.introduce = function() {
+            console.log('안녕하세요? 저는 ' + this.nickname + '이고, 나이는 ' + this.age + '살이에요.');
+        };
+
+        // 인스턴스(instance)
+        const person1 = new Person('일분이', 10);
+        const person2 = new Person('이분이', 8);
+
         const person = {
             nickname: '일분이',
             age: 10,
@@ -35,15 +49,7 @@
         // }
         // foo();
 
-        const person2 = {
-            nickname: '이분이',
-            age: 8,
-            introduce: function() {
-                console.log('안녕하세요. 저는 ' + this.nickname + '이고 나이는 ' + this.age + '살이에요.');
-            }
-        };
-
-        person.introduce();
+        person1.introduce();
         person2.introduce();
     </script>
 </body>
