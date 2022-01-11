@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href='./Interactive_section5-event/css/reset.css'>
+    <style>
+        img{
+            max-width: 100%;
+        }
+        .content {
+            height: 1000vh;
+            padding: 20%;
+            background: yellowgreen;
+        }
+        .output {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 200;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .ilbuni {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+        }
+        .ilbuni.zoom {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="output">output</div>
+    <div class="content">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Blanditiis corrupti velit tempore ducimus magni vitae eveniet 
+            quia labore ad! Aspernatur accusamus saepe soluta, 
+            minima officiis magni iste quasi excepturi unde!
+        </p>
+        <figure class="ilbuni">
+            <img src="Interactive_section5-event/images/ilbuni_0.png" alt="일분이">
+        </figure>
+    </div>
+
+    <script>
+        (function() {
+            const outputElem = document.querySelector('.output');
+            const ilbuniElem = document.querySelector('.ilbuni');
+
+            function showValue() {
+                // outputElem.innerHTML = window.pageYOffset;
+                // outputElem.innerHTML = ilbuniElem.offsetTop;
+                let posY = ilbuniElem.getBoundingClientRect().top;
+                outputElem.innerHTML = posY;
+
+                if (posY < window.innerHeight * 0.2) {
+                    ilbuniElem.classList.add('zoom');
+                } else {
+                    ilbuniElem.classList.remove('zoom');
+                }
+            }
+
+            window.addEventListener('scroll', function() {
+                showValue();
+            });
+
+        })();
+    </script>
+</body>
+</html>
