@@ -16,17 +16,26 @@
 
 <script>
     let timeId;
+    let n = 0;
     const btn = document.querySelector('.btn');
 
     function sample() {
-        console.log('sample!');
+        n++;
+        console.log(n);
+        if (n>200) {
+            return;
+        }
+
+        timeId = requestAnimationFrame(sample);
     }
 
+    sample();
+    
     // timeId = setTimeout(sample, 3000);
 
-    // btn.addEventListener('click', function() {
-    //     clearTimeout(timeId);
-    // });
+    btn.addEventListener('click', function() {
+        cancelAnimationFrame(timeId);
+    });
 
     //반복
     // timeId = setInterval(sample, 1000/60);
