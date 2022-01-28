@@ -1,4 +1,4 @@
-function Character() {
+function Character(info) {
     this.mainELem = document.createElement('div');
     this.mainELem.classList.add('character');
     this.mainELem.innerHTML = ''
@@ -28,4 +28,6 @@ function Character() {
         + '</div>';
 
     document.querySelector('.stage').appendChild(this.mainELem);
+
+    this.mainELem.style.left = info.xPos + '%';
 }
