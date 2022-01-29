@@ -31,3 +31,7 @@ function Character(info) {
 
     this.mainELem.style.left = info.xPos + '%';
 }
+
+Character.prototype = {
+    constructor: Character,
+}
