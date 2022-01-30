@@ -188,4 +188,5 @@ body {
 .character-leg-left .face-back { background-image: url('../images/ilbuni_leg_0.png'); }
 .character.running .character-leg-right { animation: ani-running-leg 0.2s alternate infinite linear; }
 .character.running .character-leg-left { animation: ani-running-leg 0.2s alternate-reverse infinite linear; }
-.character.running .character-arm { animation: ani-running-arm 0.2s alternate infinite linear; }
+.character.running .character-arm-right { animation: ani-running-arm 0.2s alternate infinite linear; }
+.character.running .character-arm-left { animation: ani-running-arm 0.2s alternate-reverse infinite linear; }
