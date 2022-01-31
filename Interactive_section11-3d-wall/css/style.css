@@ -105,10 +105,10 @@ body {
     height: 15.58vw;
     transform-style: preserve-3d;
 }
-.character [data-direction='forward'] { transform: rotateY(180deg); }
-.character [data-direction='backward'] { transform: rotateY(0deg); }
-.character [data-direction='left'] { transform: rotateY(-90deg); }
-.character [data-direction='right'] { transform: rotateY(90deg); }
+.character[data-direction='forward'] { transform: rotateY(180deg); }
+.character[data-direction='backward'] { transform: rotateY(0deg); }
+.character[data-direction='left'] { transform: rotateY(-90deg); }
+.character[data-direction='right'] { transform: rotateY(90deg); }
 .character-face-con {
     position: absolute;
     transform-style: preserve-3d;
